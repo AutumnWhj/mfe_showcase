@@ -1,7 +1,18 @@
 {
   "name": "root",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "lerna": "^3.22.1"
+  },
+  "scripts": {
+    "init": "lerna bootstrap",
+    "list": "lerna list",
+    "changed": "lerna changed",
+    "diff": "lerna diff",
+    "build": "lerna run build",
+    "clean": "lerna clean"
   }
 }
