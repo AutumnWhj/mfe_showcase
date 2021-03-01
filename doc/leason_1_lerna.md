@@ -130,3 +130,38 @@ function utils() {
 lerna create login
 ```
 
+再次执行 `lerna publish`会提示 
+
+```bash
+Select a new version (currently 0.0.2)
+```
+
+让我们选择一个新的版本，这里选择 `Minor (0.1.0)` 发布后会发现，`package.json` 的 `version` 都变成 *0.1.0* 了，但是事实上`login`模块仅仅是刚创建的，这点不利于版本号的语义化。这时候就需要使用`lerna`的 `independent` 模式，模块发布新版本时，会逐个询问需要升级的版本号，基准版本为它自身的 `package.json`
+
+我们把 `lerna.json` 更新为
+
+```json
+{
+  "packages": [
+    "packages/*"
+  ],
+  "useWorkspaces": true,
+  "npmClient": "yarn",
+  "version": "independent"
+}
+```
+
+然后修改以下 `login` 的代码 `packages/login/lib/login.js`
+
+```js
+'use strict';
+
+module.exports = login;
+
+function login() {
+    // TODO
+    console.log('login')
+}
+```
+
+提交代码后，再次执行 `lerna publish`
