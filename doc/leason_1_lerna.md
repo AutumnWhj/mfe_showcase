@@ -164,4 +164,12 @@ function login() {
 }
 ```
 
-提交代码后，再次执行 `lerna publish`
+提交代码后，再次执行 `lerna publish`，这次就只会看到提示
+
+```bash
+Select a new version for login (currently 0.1.0)
+```
+
+这里选择 `Patch (0.1.1)` 发布后会发现，只有`packages/login/package.json` 的 `version` 都变成 *0.1.1* 其他的都没有改变
+
+这样就可以更独立的管理各个模块的版本，而且不用简单修改就导致所有的模块的版本都更新了。
