@@ -105,3 +105,19 @@ lerna add utils --scope=master
 
 > symlink:符号链接，也就是平常所说的建立超链接，此时master的node_modules里的utils直接链接至项目里的utils，而不会再重新拉取一份，这个对本地开发是非常有用的。
 
+然后我们尝试以下 `publish`， 登录好 `npm` 或者在 `lerna.json` 内配置好对应的代理，然后执行 `lerna publish` 来发布代码，`Lerna` 就会自动的为我们打上git tag
+
+然后发布完之后，我们尝试以下更新 `packages/utils/lib/utils.js` 内的代码
+
+```js
+'use strict';
+
+module.exports = utils;
+
+function utils() {
+    // TODO
+    console.log(1)
+}
+```
+
+这时候通过 `lerna diff` 就可以看到目前代码和线上版本的区别
