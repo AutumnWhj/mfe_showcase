@@ -85,3 +85,23 @@ lerna add lodash --scope=utils
 
 并且再外层有 `node_modules` 文件夹，由于`node_modules`是不需要上传的，所以这里我们添加一下 `.gitignore`
 
+接着 `master` 应用是需要用到 `utils` 的，所以这里需要建立他们的依赖关系
+
+```bash
+lerna add utils --scope=master
+```
+
+在 `packages/master/package.json` 文件内看到 `utils` 的依赖关系已经建立了了
+
+```json
+{
+  "dependencies": {
+    "utils": "^0.0.0"
+  }
+}
+```
+
+这里`Lerna`会自动检测到`utils`隶属于当前项目，直接采用`symlink`的方式关联过去
+
+> symlink:符号链接，也就是平常所说的建立超链接，此时master的node_modules里的utils直接链接至项目里的utils，而不会再重新拉取一份，这个对本地开发是非常有用的。
+
