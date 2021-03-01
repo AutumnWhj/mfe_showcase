@@ -120,4 +120,13 @@ function utils() {
 }
 ```
 
-这时候通过 `lerna diff` 就可以看到目前代码和线上版本的区别
+这时候通过 `lerna diff` 就可以看到目前代码和线上版本的区别，再次执行 `lerna publish` 后，就可以看到 `lerna.json`，`packages/master/package.json`，`packages/utils/package.json` 的 `version` 都变成 *0.0.2*
+
+以上就是 `lerna`的 `fixed` 模式，模块发布新版本时，都会升级到leran.json里编写的version字段。
+
+现在我们创建第三个模块 `login`
+
+```bash
+lerna create login
+```
+
