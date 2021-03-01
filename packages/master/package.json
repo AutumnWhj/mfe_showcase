@@ -1,6 +1,6 @@
 {
   "name": "master",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "主应用",
   "keywords": [
     "微前端主应用"
@@ -30,6 +30,6 @@
     "url": "https://github.com/thomas-bello/mfe_showcase/issues"
   },
   "dependencies": {
-    "utils": "^0.0.2"
+    "utils": "^0.1.0"
   }
 }
