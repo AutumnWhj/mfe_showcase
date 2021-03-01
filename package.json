@@ -1,6 +1,5 @@
 {
   "name": "root",
-  "private": true,
   "workspaces": [
     "packages/*"
   ],
@@ -15,5 +14,6 @@
     "build": "lerna run build",
     "clean": "lerna clean",
     "publish": "lerna publish"
-  }
+  },
+  "version": "0.0.0"
 }
