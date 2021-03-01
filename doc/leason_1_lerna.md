@@ -44,7 +44,7 @@ lerna init
     "lerna": "^3.22.1"
   },
   "scripts": {
-    "init": "lerna bootstrap", // 把所有 packages 内的项目的依赖安装
+    "init": "lerna bootstrap", // 把所有 packages 内的项目的依赖安装，安装所有依赖项并链接任何交叉依赖项
     "list": "lerna list",
     "changed": "lerna changed",
     "diff": "lerna diff", 
@@ -61,4 +61,27 @@ lerna init
 lerna create master
 ```
 
-一连回车后，就可以看到 `packages` 内有了 `master` 文件夹了
+一连回车后，就可以看到 `packages` 内有了 `master` 文件夹了，用同样的方法添加一个公共的`utils`
+
+```bash
+lerna create utils
+```
+
+然后对 `utils` 添加第三方库 [`lodash`](https://lodash.com) 的依赖
+
+```bash
+lerna add lodash --scope=utils
+```
+
+这时候就可以在 `packages/utils/package.json` 文件内看到 `lodash` 的依赖已经安装了
+
+```json
+{
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
+```
+
+并且再外层有 `node_modules` 文件夹，由于`node_modules`是不需要上传的，所以这里我们添加一下 `.gitignore`
+
