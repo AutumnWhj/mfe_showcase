@@ -13,6 +13,7 @@
     "changed": "lerna changed",
     "diff": "lerna diff",
     "build": "lerna run build",
-    "clean": "lerna clean"
+    "clean": "lerna clean",
+    "publish": "lerna publish"
   }
 }
