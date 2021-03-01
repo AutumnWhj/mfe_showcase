@@ -55,6 +55,8 @@ lerna init
 
 ```
 
+## 创建子模块
+
 然后创建我们后面要用的 `master` 应用
 
 ```bash
@@ -66,6 +68,8 @@ lerna create master
 ```bash
 lerna create utils
 ```
+
+## 添加依赖
 
 然后对 `utils` 添加第三方库 [`lodash`](https://lodash.com) 的依赖
 
@@ -105,6 +109,8 @@ lerna add utils --scope=master
 
 > symlink:符号链接，也就是平常所说的建立超链接，此时master的node_modules里的utils直接链接至项目里的utils，而不会再重新拉取一份，这个对本地开发是非常有用的。
 
+## 发布版本
+
 然后我们尝试以下 `publish`， 登录好 `npm` 或者在 `lerna.json` 内配置好对应的代理，然后执行 `lerna publish` 来发布代码，`Lerna` 就会自动的为我们打上git tag
 
 然后发布完之后，我们尝试以下更新 `packages/utils/lib/utils.js` 内的代码
@@ -130,7 +136,7 @@ function utils() {
 lerna create login
 ```
 
-再次执行 `lerna publish`会提示 
+再次执行 `lerna publish`会提示
 
 ```bash
 Select a new version (currently 0.0.2)
@@ -173,3 +179,7 @@ Select a new version for login (currently 0.1.0)
 这里选择 `Patch (0.1.1)` 发布后会发现，只有`packages/login/package.json` 的 `version` 都变成 *0.1.1* 其他的都没有改变
 
 这样就可以更独立的管理各个模块的版本，而且不用简单修改就导致所有的模块的版本都更新了。
+
+---
+
+下一节 [使用qiankun 构建Master](https://github.com/thomas-bello/mfe_showcase/blob/leason_2_qiankun/doc/leason_2_qiankun.md)

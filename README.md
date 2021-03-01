@@ -10,7 +10,7 @@
 可以切换到对应的分支了解代码的更新情况
 
 + [x] [使用Lerna 构建项目](https://github.com/thomas-bello/mfe_showcase/blob/leason_1_lerna/doc/leason_1_lerna.md)
-+ [ ] [使用qiankun 构建Master]()
++ [x] [使用qiankun 构建Master](https://github.com/thomas-bello/mfe_showcase/blob/leason_2_qiankun/doc/leason_2_qiankun.md)
 + [ ] [构建第一个子应用Login]()
 + [ ] [微应用间通信]()
 + [ ] [跨应用通信与vuex结合]()
