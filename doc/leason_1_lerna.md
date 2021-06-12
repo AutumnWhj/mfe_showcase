@@ -180,6 +180,14 @@ Select a new version for login (currently 0.1.0)
 
 这样就可以更独立的管理各个模块的版本，而且不用简单修改就导致所有的模块的版本都更新了。
 
+## 下载依赖
+
+当第一次下载这个lerna的项目需要安装所有的依赖时
+
+```bash
+lerna bootstrap # 本项目内配置了 init 命令 yarn init
+```
+
 ---
 
 下一节 [使用qiankun 构建Master](https://github.com/thomas-bello/mfe_showcase/blob/leason_2_qiankun/doc/leason_2_qiankun.md)
