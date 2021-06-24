@@ -188,6 +188,16 @@ Select a new version for login (currently 0.1.0)
 lerna bootstrap # 本项目内配置了 init 命令 yarn init
 ```
 
+## 常见问题
+
+- `lerna publish` 时报 `lerna ERR! E404 Scope not found` 错误
+
+> 这个是因为你发布的包名字的格式是 `@xxx/yyy` 的形式 而`@xxx` 是属于 `Scope` 的概念，需要在[npmjs.com](https://www.npmjs.com) 有对应的`Organizations`，需要先新建一个名字为`xxx`的`Organizations`，才可以发布。
+
+- `lerna publish` 时报 `lerna ERR! E403 Forbidden` 错误
+
+> 这个有两个可能，1、你发布的名字已经给占用了。2、你是发布的包名字的格式是 `@xxx/yyy` 而你不在 `xxx` 这个 `Organizations`中，或者组织没有给你权限。 要不想办法拿到权限，要不就是改名字。
+
 ---
 
 下一节 [使用qiankun 构建Master](https://github.com/thomas-bello/mfe_showcase/blob/leason_2_qiankun/doc/leason_2_qiankun.md)
